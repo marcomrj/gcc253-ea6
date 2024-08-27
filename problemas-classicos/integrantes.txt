@@ -1,8 +1,8 @@
 Aluno: ANDRÉ ULHÔA WERNECK
-Matrícula:
+Matrícula: 202110828
 
 Aluno: FILIPE DE OLIVEIRA VILAS BOAS
-Matrícula:
+Matrícula: 202120935
 
 Aluno: LUCAS CARVALHO FERREIRA
 Matrícula: 202110827
@@ -11,4 +11,4 @@ Aluno: MARCO ANTONIO MARTINS RIBEIRO DE JESUS
 Matrícula: 202010701
 
 Aluno: VITOR MELO ASSUNÇÃO
-Matrícula:
+Matrícula: 202010140
