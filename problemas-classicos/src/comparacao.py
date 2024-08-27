@@ -10,9 +10,12 @@ def executar_testes_e_salvar_resultados():
     with open("../testes/entrada.txt", "r") as file:
         resultados = []
         comprimentos_vetores = []
-        for line in file:
+        identificadores_vetores = []
+        
+        for idx, line in enumerate(file, start=1):
             nums = list(map(int, line.split()))
             comprimentos_vetores.append(len(nums))
+            identificadores_vetores.append(f'Vetor {idx}')
             tempos_guloso = []
             tempos_backtracking = []
 
@@ -42,6 +45,10 @@ def executar_testes_e_salvar_resultados():
         # Convertendo resultados para DataFrame
         df_resultados = pd.DataFrame(resultados)
         df_resultados['comprimento_vetor'] = comprimentos_vetores
+        df_resultados.insert(0, 'identificador_vetor', identificadores_vetores)
+
+        # Salvar o DataFrame em CSV
+        df_resultados.to_csv('resultados/resultados_comparacao.csv', index=False)
 
         # Gráficos
         fig, axs = plt.subplots(2, 1, figsize=(10, 10))
@@ -72,6 +79,6 @@ def executar_testes_e_salvar_resultados():
         plt.tight_layout()
 
         # Salvar gráficos como imagem
-        plt.savefig('comparacao_tempos_qualidade.png')
+        plt.savefig('resultados/comparacao_tempos_qualidade.png')
 
 executar_testes_e_salvar_resultados()
