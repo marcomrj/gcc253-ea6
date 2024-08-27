@@ -13,3 +13,6 @@ guloso:
 # Target para executar o script backtracking.py
 backtracking:
 	cd $(SCRIPT_DIR) && $(PYTHON) backtracking.py
+
+entrada:
+	cd $(SCRIPT_DIR) && $(PYTHON) gerador_de_entrada.py
