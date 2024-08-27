@@ -1,16 +1,21 @@
 def backtrack(index, soma_atual, conjunto, used_indices, nums, target, n):
     if soma_atual == target:
-        return True, conjunto, used_indices
+        subconjunto1 = conjunto
+        subconjunto2 = [nums[i] for i in range(n) if i not in used_indices]
+        return True, subconjunto1, subconjunto2
     if index >= n or soma_atual > target:
         return False, [], []
-    encontrado, resultado, indices = backtrack(index + 1,
-                                               soma_atual + nums[index],
-                                               conjunto + [nums[index]],
-                                               used_indices + [index],
-                                               nums, target, n)
+
+    encontrado, resultado1, resultado2 = backtrack(index + 1,
+                                                   soma_atual + nums[index],
+                                                   conjunto + [nums[index]],
+                                                   used_indices + [index],
+                                                   nums, target, n)
     if encontrado:
-        return True, resultado, indices
+        return True, resultado1, resultado2
+
     return backtrack(index + 1, soma_atual, conjunto, used_indices, nums, target, n)
+
 
 def pode_particionar(nums):
     total_sum = sum(nums)
