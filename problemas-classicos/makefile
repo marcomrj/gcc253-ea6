@@ -1,4 +1,5 @@
 PYTHON=python3
+PIP=pip3
 SCRIPT_DIR=./src
 DATA_DIR=../testes
 

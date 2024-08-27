@@ -1,13 +1,17 @@
 import random
 
+
 def gerar_vetores_aleatorios(num_vetores, num_maximo=50):
     vetores = []
-    comprimento = 4 # Assim como solicitado durante a apresentação, a geração do comprimento não é mais aleatória
+    # Assim como solicitado durante a apresentação,
+    # a geração do comprimento não é mais aleatória
+    comprimento = 4
     for _ in range(num_vetores):
         comprimento += 2
         vetor = [random.randint(0, num_maximo) for _ in range(comprimento)]
         vetores.append(vetor)
     return vetores
+
 
 def salvar_vetores_em_arquivo(vetores, caminho_arquivo):
     vetores.sort(key=len)
@@ -16,8 +20,11 @@ def salvar_vetores_em_arquivo(vetores, caminho_arquivo):
             linha = ' '.join(map(str, vetor))
             arquivo.write(linha + '\n')
 
-num_vetores = 10    # Valor que define a quantidade de vetores a serem analisados
-num_maximo = 50     # Valor que define os números máximos que podem ser gerados aleatoriamente
+
+# Valor que define a quantidade de vetores a serem analisados
+num_vetores = 10
+# Valor que define os números máximos que podem ser gerados aleatoriamente
+num_maximo = 50
 
 vetores_aleatorios = gerar_vetores_aleatorios(num_vetores, num_maximo)
 
